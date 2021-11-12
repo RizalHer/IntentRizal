@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IntentRizal">
         <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".MoveWithActivity"
             android:exported="false" />
         <activity

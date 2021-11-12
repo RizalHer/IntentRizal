@@ -1,14 +1,19 @@
 package com.Rizal.IntenRizal
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnMoveActivity: Button
     private lateinit var btnMoveWithData: Button
+    private lateinit var btnDialNumber: Button
+    private lateinit var btnResult: Button
+    private lateinit var tvResult: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,6 +23,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         btnMoveWithData = findViewById(R.id.btn_move_with_data)
         btnMoveWithData.setOnClickListener(this)
+
+        btnDialNumber = findViewById(R.id.btn_dial)
+        btnDialNumber.setOnClickListener(this)
+
+        btnResult = findViewById(R.id.btn_result)
+        btnResult.setOnClickListener(this)
+
+        tvResult = findViewById(R.id.tv_result)
+        RoleUtama()
+    }
+
+    private fun RoleUtama() {
+        val bundle = intent.extras
+        val role = bundle?.getString("Role")
+        tvResult.text = role
+
     }
 
     override fun onClick(v: View?) {
@@ -33,6 +54,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     bundle.putString("Nama", "Rizal")
                     bundle.putString("Moto", "Bismillah Sukses")
                     intent.putExtras(bundle)
+                    startActivity(intent)
+                }
+                R.id.btn_dial -> run {
+                    var dialNumber = "085895875364"
+                    val intent = Intent(Intent.ACTION_DIAL, Uri.parse( "tel:" + dialNumber))
+                    startActivity(intent)
+                }
+                R.id.btn_result -> run {
+                    val intent = Intent(this, ResultActivity::class.java)
                     startActivity(intent)
                 }
             }

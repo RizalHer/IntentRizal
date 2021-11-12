@@ -5,10 +5,13 @@
     <string name="dial_number">PANGGIL TELEPON</string>
     <string name="move_with_result">PINDAH AKTIVITI UNTUK RESULT</string>
     <string name="result_from_activity">HASIL DARI AKTIVITI</string>
-    <string name="chose_color">PILIH WARNA</string>
-    <string name="_blue">BIRU</string>
-    <string name="_red">MERAH</string>
-    <string name="_black">HITAM</string>
+    <string name="chose_role">PILIH ROLE UTAMAMU</string>
+    <string name="_assasin">Assasin</string>
+    <string name="_tank">Tank</string>
+    <string name="_marksman">MM</string>
+    <string name="_mage">Mage</string>
+    <string name="_fighter">Fighter</string>
+    <string name="_suport">Suport</string>
     <string name="chose">PILIH</string>
     <string name="data_received">DATA DITERIMA</string>
     <string name="this_ismove_activity">INI PINDAH AKTIVITI</string>
